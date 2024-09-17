@@ -1,0 +1,17 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "cc1eec3b"
+  },
+  "about.qmd": {
+    "about.html": "88020132"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "2f5e0efd"
+  },
+  "posts/post-with-code/salera-index.qmd": {
+    "salera-index.html": "bf3709e8"
+  },
+  "index.qmd": {
+    "index.html": "1dfdc30f"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "607b24cf20332ff067ef8e45ec37a71c",
+  "result": {
+    "markdown": "---\ntitle: \"Univariate Normal Distribution\"\nauthor: \"Clarete Clavecillas Salera Saligumba\"\ndate: \"2024-09-15\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n\n## Description\n\nA random variable X is normally distributed with mean \\mew and variance \\sigma if it has the probability density function of X as:\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

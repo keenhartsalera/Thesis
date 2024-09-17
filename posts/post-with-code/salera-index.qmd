@@ -1,0 +1,103 @@
+---
+title: "Thesis"
+author: "Clarete Clavecillas Salera Saligumba"
+date: "2024-09-15"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+# HISTORICAL BACKGROUND
+
+Abraham de Moivre, an century statistician and consultant to gamblers, was often called upon to make these lengthy computations. de Moivre noted that when the number of events (coin flips) increased, the shape of the binomial distribution approached a very smooth curve.de Moivre reasoned that if he could find a mathematical expression for this curve, he would be able to solve problems such as
+finding the probability of or more heads out of coin flips much more easily. This is exactly what he did, and the curve he discovered is now called the "normal curve."
+
+One of the first applications of the normal distribution was to the analysis of errors of
+measurement made in astronomical observations, errors that occurred because of imperfect instruments and imperfect observers. Galileo in the century noted that these errors were symmetric and that small errors occurred more frequently than large errors.
+This led to several hypothesized distributions of errors, but it was not until the early century that it was discovered that these errors followed a normal distribution. Independently, the mathematicians Adrain in and Gauss in developed the formula for the normal distribution and showed that errors were fit well by this distribution.
+
+This same distribution had been discovered by Laplace in when he derived the extremely important central limit theorem, the topic of a later section of this chapter. Laplace showed that even if a distribution is not normally distributed, the means of repeated samples from the distribution would be very nearly normally distributed, and that the larger the sample size, the closer the distribution of means would be to a normal distribution.
+
+Quételet was the first to apply the normal distribution to human characteristics. He noted that characteristics such as height, weight,
+and strength were normally distributed.
+
+# DEFINITIONS AND PROPERTIES
+
+The normal distribution is the most important and most widely used distribution in statistics. It is sometimes called the "bell curve," although the tonal qualities of such a bell would be less than pleasing. It is also called the "Gaussian curve" after the mathematician Karl Friedrich Gauss. Although Gauss played an important
+role in its history, Abraham de Moivre first discovered the normal distribution.
+
+## PDF
+
+### Normal Distribution
+
+A random variable X is normally distributed with mean  and variance  if it has the **probability density function** of X as:
+
+$$
+f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^{2}}}exp{[-\frac{1}{2\sigma^{2}}(x-\mu)^{2}]}
+$$
+$$, -\infty < x < \infty , -\infty < \mu < \infty , \sigma > 0 $$
+
+The constants $\mu$, $\sigma$, and $\sigma^2$ are, respectively, the mean, standard deviation, and variance of the normal distribution. 
+
+e = natural logarithm
+$\pi$ = constant pi
+
+### Standard Normal Distribution
+
+A normal distribution with a mean of and a standard deviation of is called a standard normal distribution.
+
+
+Let F(x;$\mu$, $\sigma^2$) denote the cumulative distribution function (cdf) of X.
+
+The pdf of a standard normal random variable Z is given by
+
+$$
+\phi(z) = \frac{1}{\sqrt{2\pi}}exp(-\frac{z^{2}}{2})  
+$$
+$$ ,  -\infty < z < \infty $$
+
+
+Let $\Phi(z)$ denote the cdf of z.
+
+Throughout the book the notation $N(\mu, \sigma^2)$ will denote the **normal distribution** $F(\cdot, \mu, \sigma^2)$ with mean $\mu$  and variance $\sigma^2$. Also, the notations f, F, $\phi, and \Phi$ are used only in reference to **normal distributions**
+
+## CDF
+
+The Cumulative Distribution Function (CDF) of a univariate normal distribution gives the probability that a normally distributed random variable𝑋takes on a value less than or equal to some value 𝑥.
+
+### Normal Distribution
+
+For a normal distribution with mean $\mu$ and standard deviation $\sigma$ the CDF is expressed as:
+
+$$F(x) = P(X\le x) = \int_{-\infty }^{x}\frac{1}{\sigma\sqrt{2\pi}}exp(-\frac{(t-\mu)^{2}}{2\sigma^{2}})dt$$
+
+### Standard Normal Distribution
+
+In the case of the standard normal distribution, where $\mu$ = 0 and $\sigma$=1 the CDF simplifies to:
+
+$$\Phi(x) = \int_{-\infty }^{x}\frac{1}{\sqrt{2\pi}}exp(-\frac{t^{2}}{2})dt$$
+
+
+## MGF
+
+The Moment Generating Function (MGF) of a univariate normal distribution provides a way to capture all moments of the distribution. For a random variable 𝑋that follows a normal distribution with mean $\mu$ and variance $\sigma^2$ the MGF is given by
+
+$$M_{x}(t) = \mathbb{E}[e^{tX}]$$
+
+The MGF for a normal distribution 𝑋∼𝑁($\mu$,$\sigma^2$) is:
+
+$$M_{x}(t) = exp(\mu t+\frac{\sigma^2 t^2}{2})$$
+
+
+## Features
+
+1. Normal distributions are symmetric around their mean
+2. The mean, median, and mode of a normal distribution are equal.
+3. The area under the normal curve is equal to .
+4. Normal distributions are denser in the center and less dense in the tails.
+5. Normal distributions are defined by two parameters, the mean ($\mu$) and the standard deviation
+($\sigma$).
+6. 68% of the area of a normal distribution is within one standard deviation of the mean.
+7. Approximately 95% of the area of a normal distribution is within two standard deviations of
+the mean.
+
+

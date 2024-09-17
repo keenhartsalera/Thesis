@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "posts/post-with-code/salera-index.html",
+    "href": "posts/post-with-code/salera-index.html",
+    "title": "Thesis",
+    "section": "",
+    "text": "Abraham de Moivre, an century statistician and consultant to gamblers, was often called upon to make these lengthy computations. de Moivre noted that when the number of events (coin flips) increased, the shape of the binomial distribution approached a very smooth curve.de Moivre reasoned that if he could find a mathematical expression for this curve, he would be able to solve problems such as finding the probability of or more heads out of coin flips much more easily. This is exactly what he did, and the curve he discovered is now called the “normal curve.”\nOne of the first applications of the normal distribution was to the analysis of errors of measurement made in astronomical observations, errors that occurred because of imperfect instruments and imperfect observers. Galileo in the century noted that these errors were symmetric and that small errors occurred more frequently than large errors. This led to several hypothesized distributions of errors, but it was not until the early century that it was discovered that these errors followed a normal distribution. Independently, the mathematicians Adrain in and Gauss in developed the formula for the normal distribution and showed that errors were fit well by this distribution.\nThis same distribution had been discovered by Laplace in when he derived the extremely important central limit theorem, the topic of a later section of this chapter. Laplace showed that even if a distribution is not normally distributed, the means of repeated samples from the distribution would be very nearly normally distributed, and that the larger the sample size, the closer the distribution of means would be to a normal distribution.\nQuételet was the first to apply the normal distribution to human characteristics. He noted that characteristics such as height, weight, and strength were normally distributed."
+  },
+  {
+    "objectID": "posts/post-with-code/salera-index.html#pdf",
+    "href": "posts/post-with-code/salera-index.html#pdf",
+    "title": "Thesis",
+    "section": "PDF",
+    "text": "PDF\n\nNormal Distribution\nA random variable X is normally distributed with mean and variance if it has the probability density function of X as:\n\\[\nf(x; \\mu, \\sigma^2) = \\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}exp{[-\\frac{1}{2\\sigma^{2}}(x-\\mu)^{2}]}\n\\] \\[, -\\infty &lt; x &lt; \\infty , -\\infty &lt; \\mu &lt; \\infty , \\sigma &gt; 0 \\]\nThe constants \\(\\mu\\), \\(\\sigma\\), and \\(\\sigma^2\\) are, respectively, the mean, standard deviation, and variance of the normal distribution.\ne = natural logarithm \\(\\pi\\) = constant pi\n\n\nStandard Normal Distribution\nA normal distribution with a mean of and a standard deviation of is called a standard normal distribution.\nLet F(x;\\(\\mu\\), \\(\\sigma^2\\)) denote the cumulative distribution function (cdf) of X.\nThe pdf of a standard normal random variable Z is given by\n\\[\n\\phi(z) = \\frac{1}{\\sqrt{2\\pi}}exp(-\\frac{z^{2}}{2})  \n\\] \\[ ,  -\\infty &lt; z &lt; \\infty \\]\nLet \\(\\Phi(z)\\) denote the cdf of z.\nThroughout the book the notation \\(N(\\mu, \\sigma^2)\\) will denote the normal distribution \\(F(\\cdot, \\mu, \\sigma^2)\\) with mean \\(\\mu\\) and variance \\(\\sigma^2\\). Also, the notations f, F, \\(\\phi, and \\Phi\\) are used only in reference to normal distributions"
+  },
+  {
+    "objectID": "posts/post-with-code/salera-index.html#cdf",
+    "href": "posts/post-with-code/salera-index.html#cdf",
+    "title": "Thesis",
+    "section": "CDF",
+    "text": "CDF\nThe Cumulative Distribution Function (CDF) of a univariate normal distribution gives the probability that a normally distributed random variable𝑋takes on a value less than or equal to some value 𝑥.\n\nNormal Distribution\nFor a normal distribution with mean \\(\\mu\\) and standard deviation \\(\\sigma\\) the CDF is expressed as:\n\\[F(x) = P(X\\le x) = \\int_{-\\infty }^{x}\\frac{1}{\\sigma\\sqrt{2\\pi}}exp(-\\frac{(t-\\mu)^{2}}{2\\sigma^{2}})dt\\]\n\n\nStandard Normal Distribution\nIn the case of the standard normal distribution, where \\(\\mu\\) = 0 and \\(\\sigma\\)=1 the CDF simplifies to:\n\\[\\Phi(x) = \\int_{-\\infty }^{x}\\frac{1}{\\sqrt{2\\pi}}exp(-\\frac{t^{2}}{2})dt\\]"
+  },
+  {
+    "objectID": "posts/post-with-code/salera-index.html#mgf",
+    "href": "posts/post-with-code/salera-index.html#mgf",
+    "title": "Thesis",
+    "section": "MGF",
+    "text": "MGF\nThe Moment Generating Function (MGF) of a univariate normal distribution provides a way to capture all moments of the distribution. For a random variable 𝑋that follows a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\) the MGF is given by\n\\[M_{x}(t) = \\mathbb{E}[e^{tX}]\\]\nThe MGF for a normal distribution 𝑋∼𝑁(\\(\\mu\\),\\(\\sigma^2\\)) is:\n\\[M_{x}(t) = exp(\\mu t+\\frac{\\sigma^2 t^2}{2})\\]"
+  },
+  {
+    "objectID": "posts/post-with-code/salera-index.html#features",
+    "href": "posts/post-with-code/salera-index.html#features",
+    "title": "Thesis",
+    "section": "Features",
+    "text": "Features\n\nNormal distributions are symmetric around their mean\nThe mean, median, and mode of a normal distribution are equal.\nThe area under the normal curve is equal to .\nNormal distributions are denser in the center and less dense in the tails.\nNormal distributions are defined by two parameters, the mean (\\(\\mu\\)) and the standard deviation (\\(\\sigma\\)).\n68% of the area of a normal distribution is within one standard deviation of the mean.\nApproximately 95% of the area of a normal distribution is within two standard deviations of the mean."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Thesis",
+    "section": "",
+    "text": "Thesis\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 15, 2024\n\n\nClarete Clavecillas Salera Saligumba\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 12, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  }
+]
