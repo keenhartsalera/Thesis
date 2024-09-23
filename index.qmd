@@ -3,7 +3,7 @@ title: "Thesis"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: defaultgit branch -M main
   categories: true
   sort-ui: false
   filter-ui: false

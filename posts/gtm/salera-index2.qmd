@@ -1,0 +1,112 @@
+---
+title: "Geographic Topography Mapping"
+author: "Keen Hart Salera--"
+date: "2024-09-15"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+# Concept
+
+1.  Understanding GTM
+2.  Latent Variables
+3.  EM Algorithm
+4.  Data Visualization
+
+# Introduction
+
+It is a form of **non-linear latent variable model** for which the parameters of the model can be determined using the EM algorithm.
+
+## Overview
+
+This shows how the latent variable framework can be extended to allow non-linear transformations while remaining computationally tractable leading to **GTM (Generative Topographic Mapping)** algorithm, which is based on a constrained mixture of Gaussians whose parameters can be optimized using the **EM (expectation-maximization) algorithm**.
+
+## Problem and Resolution
+
+Many data sets exhibit significant correlations between the variables. One way to capture such structure is to model the distribution of the data in terms of latent, or hidden, variables. A familiar example of this approach is factor analysis, which is based on a linear transformation from latent space to data space. GTM algorithm overcomes issues such as absence of convergence proofs, lack of a cost function, no theoretical basis for selecting learning rates and neighborhood parameters, does not define probability function, which is preferable than **SOM (Self-organizing map) algorithm**.
+
+## Key Clusters
+
+1.  GTM models data distribution through latent variables, allowing for non-linear transformations.
+2.  It uses a constrained mixture of Gaussians and optimizes parameters using the **Expectation-Maximization (EM)** algorithm.
+3.  GTM is grounded in probability density estimation and useful for data visualization(desc. an important application of latent variable models), as it maps from latent space to data space.
+4.  The mapping is inverted via **Bayesian inference** or **Bayes' Theorem** to give a posterior distribution in latent space, enabling more principled data visualization approaches.
+
+# Latent Variables
+
+It is a variable that is not directly observed or measured but is inferred from other variables that are observed representing hidden or underlying factors that influence the observed data.
+
+## Goal
+
+To find a representation for the distribution $p(t)$ of data in a D-dimensional space
+
+$t = (t_{1}, …, t_{D})$ in terms of a number L of latent variables $x = (x_{1}, … , x_{L})$
+
+## Method
+
+Considering a function **y(x;W)** which maps points **x** in the latent space into corresponding points **y(x;W)** in the data space. In the mapping, **W** represents parameters that control how the latent space relates to the data space.
+
+Data in a high-dimensional space (D-dimensional space), where each point is represented by a vector $t$ of values.
+
+Latent variables exist in a space that has fewer dimensions than the original data space, instead of 3D, the latent space could be 2D.
+
+The transformation **y(x;W)** then maps the latent-variable space into an L-dimensional non-Euclidean manifold S embedded within the data space
+
+$p(x)$ = prior distribution of $x$ and its corresponding distribution in the data space is $p(y|W)$ .
+
+Since L\<D, the distribution in t-space would be confined to the L-dimensional manifold and hence would be singular. Now, the data only live on a lower dimensional manifold, **noise model** for the **t** vector is needed.
+
+The distribution of **t** , for given **x** and **W**, to be a radially-symmetric Gaussian centred on **y(x;W)** having variance $\beta^{-1}$ so that
+
+$$
+p(t|x, W, \beta) = (\frac{\beta}{2\pi}^{\frac{D}{2}})  exp \{{\frac{\beta}{2}{\left\|y(x;W) -t  \right\|^2}} \}$$
+
+The distribution in t-space, for a given value of **W**, is then obtained by integration over the **x**-distribution
+
+$$
+p(t|W, \beta) = \int p(t|x, W, \beta) p(x) dx
+$$
+
+For a given a data set $D = (t_{1}, … , t_{N} )$ of $N$ data points, we can determine the parameter matrix **W**, and the inverse variance $\beta$ , using **maximum likelihood**. In practice it is convenient to maximize the log likelihood, given by
+
+$$
+L(W, \beta) = ln \prod_{n=1}^{N} p(t_{n} | W, \beta)
+$$
+
+### Technical steps used to infer the model parameters
+
+First define a **prior distribution**, $p(x)$, for the latent variables.
+
+Also define a **mapping function**, $y(x;W)$, that transforms latent variables $x$ into the observed data, using parameters $W$. **It is needed to be optimized to fit the model.**
+
+#### Optimize the Parameters $W$
+
+Maximing the **likelihood function** , this is done through $L(W)$ (desc. a function that measure how well the model fits)
+
+Also involves **integral**.
+
+If the mapping function, `y(x;W)`, is **linear** and the latent variable distribution, `p(x)`, is a **Gaussian distribution,** the model becomes a **factor analysis model,** which is a linear method for reducing dimensionality and finding hidden factors in data.
+
+If further assumed that the noise in the data follows a **Gaussian distribution** with simple properties (like a diagonal covariance matrix), then this model becomes closely related to **Principal Component Analysis (PCA)**.
+
+The method involves using a **non-linear mapping** for `y(x;W)`, and to simplify the prior distribution, `p(x)`, it is represented as a **sum of delta functions** (specific points on a grid in latent space).
+
+In the non-linear case, the latent space is modeled as a grid of points, and the data is mapped from this grid to the high-dimensional data space. This is similar in concept to the **Self-Organizing Map (SOM)** algorithm.
+
+We therefore consider a specic form for $p(x)$ given by a sum of delta functions centered on the nodes of a regular grid in latent space
+
+$$
+p(x) = \frac{1}{K}\sum_{i=1}^{K}\delta(x-x_i)
+$$
+
+After the integral can be performed again analytically. Each point xi is then mapped to a corresponding point $y(x_i ;W)$ in data space, which forms the centre of a Gaussian density function
+
+$$
+L(W, \beta) = \sum_{n=1}^{N} ln \{{\frac{1}{K}}\sum_{i=1}^{K}p(t_n| x_i, W, \beta\}
+$$
+
+For the particular noise model $p(t|x;W;\beta)$ given by the distribution of $t$ , the distribution $p(t|x;W;\beta)$ corresponds to a *constrained* Gaussian mixture model (Hinton, Williams, and Revow 1992) since the centres of the Gaussians, given by $y(x_i ;W)$ , cannot move independently but are related through the
+
+function $y(x;W)$ .
+
+Note that, provided the mapping function $y(x;W)$ is **smooth and continuous**,the projected points $y(x_i ;W)$ will necessarily have a topographic ordering in the sense that any two points $x_A$ and $x_B$ which are close in latent space will map to points $y(x_A;W)$ and $y(x_B ;W)$ which are close in data space. (copied)

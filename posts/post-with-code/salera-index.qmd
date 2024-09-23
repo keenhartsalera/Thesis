@@ -1,10 +1,9 @@
 ---
-title: "Thesis"
-author: "Clarete Clavecillas Salera Saligumba"
+title: "Univariate Normal Distribution"
+author: "Keen Hart Salera"
 date: "2024-09-15"
 categories: [news, code, analysis]
 image: "image.jpg"
-Bibliography: "references.bib"
 ---
 
 # HISTORICAL BACKGROUND
@@ -19,7 +18,7 @@ Quételet was the first to apply the normal distribution to human characteristic
 
 # DEFINITIONS AND PROPERTIES
 
-The normal distribution is the most important and most widely used distribution in statistics. It is sometimes called the "bell curve," although the tonal qualities of such a bell would be less than pleasing. It is also called the "Gaussian curve" after the mathematician Karl Friedrich Gauss. Although Gauss played an important role in its history, Abraham de Moivre first discovered the normal distribution.
+The normal distribution is the most important and most widely used distribution in statistics for continuous variables. It is sometimes called the "bell curve," although the tonal qualities of such a bell would be less than pleasing. It is also called the "Gaussian curve" after the mathematician Karl Friedrich Gauss. Although Gauss played an important role in its history, Abraham de Moivre first discovered the normal distribution.
 
 ## PDF
 
@@ -34,6 +33,22 @@ $$ $$, -\infty < x < \infty , -\infty < \mu < \infty , \sigma > 0 $$
 The constants $\mu$, $\sigma$, and $\sigma^2$ are, respectively, the mean, standard deviation, and variance of the normal distribution.
 
 e = natural logarithm $\pi$ = constant pi
+
+$$\mathbb{E} [x] = \mu$$
+
+$var[x] = \sigma^2$
+
+$mode [x] = \mu^2$
+
+$H[x] = \frac{1}{2} ln \sigma^2 +\frac{1}{2} (1+ln(2\pi))$\$
+
+The precision : $\gamma = 1/sigma^2$ (The inverse of the variance)
+
+The conjugate prior for $\mu$ is the **Gaussian**.
+
+The conjugate prior for $\gamma$ is the **gamma distribution**.
+
+If both $\mu$ and $\gamma$ are unknown, their joint conjugate prior is the **Gaussian-gamma distribution** .
 
 ### Standard Normal Distribution
 
