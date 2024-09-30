@@ -4,6 +4,7 @@ author: "Keen Hart Salera--"
 date: "2024-09-15"
 categories: [news, code, analysis]
 image: "image.jpg"
+bibliography: reference.bib
 ---
 
 # Concept
@@ -19,7 +20,7 @@ It is a form of **non-linear latent variable model** for which the parameters of
 
 ## Overview
 
-This shows how the latent variable framework can be extended to allow non-linear transformations while remaining computationally tractable leading to **GTM (Generative Topographic Mapping)** algorithm, which is based on a constrained mixture of Gaussians whose parameters can be optimized using the **EM (expectation-maximization) algorithm**.
+This shows how the latent variable framework can be extended to allow non-linear transformations while remaining computationally tractable leading to **GTM (Generative Topographic Mapping)** algorithm, which is based on a constrained mixture of Gaussians whose parameters can be optimized using the **EM (expectation-maximization) algorithm**. @bishop1998generative
 
 ## Problem and Resolution
 
@@ -96,7 +97,7 @@ In the non-linear case, the latent space is modeled as a grid of points, and the
 We therefore consider a specic form for $p(x)$ given by a sum of delta functions centered on the nodes of a regular grid in latent space
 
 $$
-p(x) = \frac{1}{K}\sum_{i=1}^{K}\delta(x-x_i)
+p(x) = \frac{1}{K}\sum_{i=1}^{K}\delta \quad (x-x_i)
 $$
 
 After the integral can be performed again analytically. Each point xi is then mapped to a corresponding point $y(x_i ;W)$ in data space, which forms the centre of a Gaussian density function
@@ -109,4 +110,4 @@ For the particular noise model $p(t|x;W;\beta)$ given by the distribution of $t$
 
 function $y(x;W)$ .
 
-Note that, provided the mapping function $y(x;W)$ is **smooth and continuous**,the projected points $y(x_i ;W)$ will necessarily have a topographic ordering in the sense that any two points $x_A$ and $x_B$ which are close in latent space will map to points $y(x_A;W)$ and $y(x_B ;W)$ which are close in data space. (copied)
+Note that, provided the mapping function $y(x;W)$ is **smooth and continuous**,the projected points $y(x_i ;W)$ will necessarily have a topographic ordering in the sense that any two points $x_A$ and $x_B$ which are close in latent space will map to points $y(x_A;W)$ and $y(x_B ;W)$ which are close in data space. @bishop1998generative
