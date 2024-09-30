@@ -209,11 +209,26 @@ L(W, \beta) = ln \prod_{n=1}^{N} p(t_{n} | W, \beta)
 <section id="technical-steps-used-to-infer-the-model-parameters" class="level3">
 <h3 class="anchored" data-anchor-id="technical-steps-used-to-infer-the-model-parameters">Technical steps used to infer the model parameters</h3>
 <p>First define a <strong>prior distribution</strong>, <span class="math inline">\(p(x)\)</span>, for the latent variables.</p>
-<p>Also define a <strong>mapping function</strong>, <span class="math inline">\(y(x;W)\)</span>, that transforms latent variables <span class="math inline">\(x\)</span> into the observed data, using parameters <span class="math inline">\(W\)</span>. (need to be optimized to fit the model)</p>
+<p>Also define a <strong>mapping function</strong>, <span class="math inline">\(y(x;W)\)</span>, that transforms latent variables <span class="math inline">\(x\)</span> into the observed data, using parameters <span class="math inline">\(W\)</span>. <strong>It is needed to be optimized to fit the model.</strong></p>
 <section id="optimize-the-parameters-w" class="level4">
 <h4 class="anchored" data-anchor-id="optimize-the-parameters-w">Optimize the Parameters <span class="math inline">\(W\)</span></h4>
 <p>Maximing the <strong>likelihood function</strong> , this is done through <span class="math inline">\(L(W)\)</span> (desc. a function that measure how well the model fits)</p>
 <p>Also involves <strong>integral</strong>.</p>
+<p>If the mapping function, <code>y(x;W)</code>, is <strong>linear</strong> and the latent variable distribution, <code>p(x)</code>, is a <strong>Gaussian distribution,</strong> the model becomes a <strong>factor analysis model,</strong> which is a linear method for reducing dimensionality and finding hidden factors in data.</p>
+<p>If further assumed that the noise in the data follows a <strong>Gaussian distribution</strong> with simple properties (like a diagonal covariance matrix), then this model becomes closely related to <strong>Principal Component Analysis (PCA)</strong>.</p>
+<p>The method involves using a <strong>non-linear mapping</strong> for <code>y(x;W)</code>, and to simplify the prior distribution, <code>p(x)</code>, it is represented as a <strong>sum of delta functions</strong> (specific points on a grid in latent space).</p>
+<p>In the non-linear case, the latent space is modeled as a grid of points, and the data is mapped from this grid to the high-dimensional data space. This is similar in concept to the <strong>Self-Organizing Map (SOM)</strong> algorithm.</p>
+<p>We therefore consider a specic form for <span class="math inline">\(p(x)\)</span> given by a sum of delta functions centered on the nodes of a regular grid in latent space</p>
+<p><span class="math display">\[
+p(x) = \frac{1}{K}\sum_{i=1}^{K}\delta(x-x_i)
+\]</span></p>
+<p>After the integral can be performed again analytically. Each point xi is then mapped to a corresponding point <span class="math inline">\(y(x_i ;W)\)</span> in data space, which forms the centre of a Gaussian density function</p>
+<p><span class="math display">\[
+L(W, \beta) = \sum_{n=1}^{N} ln \{{\frac{1}{K}}\sum_{i=1}^{K}p(t_n| x_i, W, \beta\}
+\]</span></p>
+<p>For the particular noise model <span class="math inline">\(p(t|x;W;\beta)\)</span> given by the distribution of <span class="math inline">\(t\)</span> , the distribution <span class="math inline">\(p(t|x;W;\beta)\)</span> corresponds to a <em>constrained</em> Gaussian mixture model (Hinton, Williams, and Revow 1992) since the centres of the Gaussians, given by <span class="math inline">\(y(x_i ;W)\)</span> , cannot move independently but are related through the</p>
+<p>function <span class="math inline">\(y(x;W)\)</span> .</p>
+<p>Note that, provided the mapping function <span class="math inline">\(y(x;W)\)</span> is <strong>smooth and continuous</strong>,the projected points <span class="math inline">\(y(x_i ;W)\)</span> will necessarily have a topographic ordering in the sense that any two points <span class="math inline">\(x_A\)</span> and <span class="math inline">\(x_B\)</span> which are close in latent space will map to points <span class="math inline">\(y(x_A;W)\)</span> and <span class="math inline">\(y(x_B ;W)\)</span> which are close in data space. (copied)</p>
 
 
 </section>
